@@ -38,3 +38,10 @@ public:
         cout << "Enter new password: ";
         cin >> password;
     }
+
+    void viewProfile() {
+        cout << "Username: " << username << endl;
+        cout << "Name: " << name << endl;
+        cout << "Email: " << email << endl;
+    }
+};
