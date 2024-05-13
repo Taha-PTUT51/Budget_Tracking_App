@@ -175,3 +175,21 @@ void BudgetTrackingApp::budgetAlerts() {
     }
 }
 
+void BudgetTrackingApp::basicAnalytics() {
+    cout << "Total income: " << budget.income << endl;
+    cout << "Total expense: " << budget.expense << endl;
+    cout << "Total balance: " << budget.balance << endl;
+}
+
+void BudgetTrackingApp::passwordRecovery() {
+    user.passwordRecovery();
+}
+
+void BudgetTrackingApp::editBudget() {
+    double newIncome, newExpense;
+    cout << "Enter new income: ";
+    cin >> newIncome;
+    cout << "Enter new expense: ";
+    cin >> newExpense;
+    budget.editBudget(newIncome, newExpense);
+}
