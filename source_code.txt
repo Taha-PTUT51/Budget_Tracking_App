@@ -19,3 +19,17 @@ public:
         cout << "Enter email: ";
         cin >> email;
     }
+
+    void login() {
+        string enteredUsername, enteredPassword;
+        cout << "Enter username: ";
+        cin >> enteredUsername;
+        cout << "Enter password: ";
+        cin >> enteredPassword;
+        if (enteredUsername == username && enteredPassword == password) {
+            cout << "Login successful!" << endl;
+        }
+        else {
+            cout << "Invalid username or password!" << endl;
+        }
+    }
