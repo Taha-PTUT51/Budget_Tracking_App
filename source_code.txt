@@ -68,3 +68,14 @@ public:
         balance = income - expense;
     }
 };
+
+class Expense {
+public:
+    string description;
+    double amount;
+
+    void setExpense(string description, double amount) {
+        this->description = description;
+        this->amount = amount;
+    }
+};
