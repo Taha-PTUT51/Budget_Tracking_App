@@ -79,3 +79,74 @@ public:
         this->amount = amount;
     }
 };
+
+class Income {
+public:
+    string description;
+    double amount;
+
+    void setIncome(string description, double amount) {
+        this->description = description;
+        this->amount = amount;
+    }
+};
+
+class BudgetTrackingApp {
+public:
+    User user;
+    Budget budget;
+    vector<Expense> expenses;
+    vector<Income> incomes;
+
+    void budgetInput();
+    void expenseInput();
+    void incomeInput();
+    void trackBudget();
+    void expenseHistory();
+    void incomeHistory();
+    void budgetAlerts();
+    void basicAnalytics();
+    void passwordRecovery();
+    void editBudget();
+    void searchExpenses();
+    void searchIncomes();
+    void viewProfile();
+    void displayMenu();
+};
+
+void BudgetTrackingApp::budgetInput() {
+    double income, expense;
+    cout << "Enter income: ";
+    cin >> income;
+    cout << "Enter expense: ";
+    cin >> expense;
+    budget.setBudget(income, expense);
+}
+
+void BudgetTrackingApp::expenseInput() {
+    string description;
+    double amount;
+    cout << "Enter expense description: ";
+    cin >> description;
+    cout << "Enter expense amount: ";
+    cin >> amount;
+    Expense expense;
+    expense.setExpense(description, amount);
+    expenses.push_back(expense);
+}
+
+void BudgetTrackingApp::incomeInput() {
+    string description;
+    double amount;
+    cout << "Enter income description: ";
+    cin >> description;
+    cout << "Enter income amount: ";
+    cin >> amount;
+    Income income;
+    income.setIncome(description, amount);
+    incomes.push_back(income);
+}
+
+void BudgetTrackingApp::trackBudget() {
+    budget.trackBudget();
+}
