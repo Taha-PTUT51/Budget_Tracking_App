@@ -56,3 +56,9 @@ public:
         balance = income - expense;
     }
 
+    void trackBudget() {
+        cout << "Income: " << income << endl;
+        cout << "Expense: " << expense << endl;
+        cout << "Balance: " << balance << endl;
+    }
+
