@@ -193,3 +193,20 @@ void BudgetTrackingApp::editBudget() {
     cin >> newExpense;
     budget.editBudget(newIncome, newExpense);
 }
+
+void BudgetTrackingApp::searchExpenses() {
+    string description;
+    cout << "Enter expense description to search: ";
+    cin >> description;
+    bool found = false;
+    for (Expense expense : expenses) {
+        if (expense.description == description) {
+            cout << "Description: " << expense.description << endl;
+            cout << "Amount: " << expense.amount << endl;
+            found = true;
+        }
+    }
+    if (!found) {
+        cout << "No expense found with the given description." << endl;
+    }
+}
