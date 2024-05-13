@@ -165,3 +165,13 @@ void BudgetTrackingApp::incomeHistory() {
     }
 }
 
+void BudgetTrackingApp::budgetAlerts() {
+    // Recalculate the balance
+    budget.balance = budget.income - budget.expense;
+
+    // Check for budget alerts
+    if (budget.balance < 0) {
+        cout << "Budget alert: You have overspent!" << endl;
+    }
+}
+
