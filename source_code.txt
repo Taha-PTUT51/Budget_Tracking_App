@@ -210,3 +210,159 @@ void BudgetTrackingApp::searchExpenses() {
         cout << "No expense found with the given description." << endl;
     }
 }
+
+void BudgetTrackingApp::searchIncomes() {
+    string description;
+    cout << "Enter income description to search: ";
+    cin >> description;
+    bool found = false;
+    for (Income income : incomes) {
+        if (income.description == description) {
+            cout << "Description: " << income.description << endl;
+            cout << "Amount: " << income.amount << endl;
+            found = true;
+        }
+    }
+    if (!found) {
+        cout << "No income found with the given description." << endl;
+    }
+}
+
+void BudgetTrackingApp::viewProfile() {
+    user.viewProfile();
+}
+
+void BudgetTrackingApp::displayMenu() {
+    cout << "--------------------------" << endl;
+    cout << "       MENU OPTIONS       " << endl;
+    cout << "--------------------------" << endl;
+    cout << "| 1. Register User       |" << endl;
+    cout << "| 2. Login               |" << endl;
+    cout << "| 3. Budget Input        |" << endl;
+    cout << "| 4. Expense Input       |" << endl;
+    cout << "| 5. Income Input        |" << endl;
+    cout << "| 6. Track Budget        |" << endl;
+    cout << "| 7. Expense History     |" << endl;
+    cout << "| 8. Income History      |" << endl;
+    cout << "| 9. Budget Alerts       |" << endl;
+    cout << "| 10. Basic Analytics    |" << endl;
+    cout << "| 11. Password Recovery  |" << endl;
+    cout << "| 12. Edit Budget        |" << endl;
+    cout << "| 13. Search Expenses    |" << endl;
+    cout << "| 14. Search Incomes     |" << endl;
+    cout << "| 15. View Profile       |" << endl;
+    cout << "| 16. Exit               |" << endl;
+    cout << "--------------------------" << endl;
+    cout << "Enter your choice: ";
+}
+
+int main() {
+    BudgetTrackingApp app;
+
+    cout << "--------------------------" << endl;
+    cout << "  Welcome to Budget App!  " << endl;
+    cout << "--------------------------" << endl;
+
+    while (true) {
+        app.displayMenu();
+        int choice;
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                cout << "--------------------------" << endl;\
+                cout << "|   Register User Menu   |" << endl;
+                cout << "--------------------------" << endl;
+                app.user.registerUser();
+                break;
+            case 2:
+                cout << "--------------------------" << endl;
+                cout << "|       Login Menu       |" << endl;
+                cout << "--------------------------" << endl;
+                app.user.login();
+                break;
+            case 3:
+                cout << "--------------------------" << endl;
+                cout << "|    Budget Input Menu   |" << endl;
+                cout << "--------------------------" << endl;
+                app.budgetInput();
+                break;
+            case 4:
+                cout << "--------------------------" << endl;
+                cout << "|   Expense Input Menu   |" << endl;
+                cout << "--------------------------" << endl;
+                app.expenseInput();
+                break;
+            case 5:
+                cout << "--------------------------" << endl;
+                cout << "|    Income Input Menu   |" << endl;
+                cout << "--------------------------" << endl;
+                app.incomeInput();
+                break;
+            case 6:
+                cout << "--------------------------" << endl;
+                cout << "|    Track Budget Menu   |" << endl;
+                cout << "--------------------------" << endl;
+                app.trackBudget();
+                break;
+            case 7:
+                cout << "--------------------------" << endl;
+                cout << "|   Expense History Menu |" << endl;
+                cout << "--------------------------" << endl;
+                app.expenseHistory();
+                break;
+            case 8:
+                cout << "--------------------------" << endl;
+                cout << "|    Income History Menu |" << endl;
+                cout << "--------------------------" << endl;
+                app.incomeHistory();
+                break;
+            case 9:
+                cout << "--------------------------" << endl;
+                cout << "|    Budget Alerts Menu  |" << endl;
+                cout << "--------------------------" << endl;
+                app.budgetAlerts();
+                break;
+            case 10:
+                cout << "--------------------------" << endl;
+                cout << "|  Basic Analytics Menu  |" << endl;
+                cout << "--------------------------" << endl;
+                app.basicAnalytics();
+                break;
+            case 11:
+                cout << "--------------------------" << endl;
+                cout << "| Password Recovery Menu |" << endl;
+                cout << "--------------------------" << endl;
+                app.passwordRecovery();
+                break;
+            case 12:
+                cout << "--------------------------" << endl;
+                cout << "|    Edit Budget Menu    |" << endl;
+                cout << "--------------------------" << endl;
+                app.editBudget();
+                break;
+            case 13:
+                cout << "--------------------------" << endl;
+                cout << "|  Search Expenses Menu  |" << endl;
+                cout << "--------------------------" << endl;
+                app.searchExpenses();
+                break;
+            case 14:
+                cout << "--------------------------" << endl;
+                cout << "|   Search Incomes Menu  |" << endl;
+                cout << "--------------------------" << endl;
+                app.searchIncomes();
+                break;
+            case 15:
+                cout << "--------------------------" << endl;
+                cout << "|    View Profile Menu   |" << endl;
+                cout << "--------------------------" << endl;
+                app.viewProfile();
+                break;
+            case 16:
+                return 0;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+                break;
+        }
+    }
+}
