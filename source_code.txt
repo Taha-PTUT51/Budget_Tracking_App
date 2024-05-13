@@ -1,1 +1,21 @@
 Source_Code_of_the_project:
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class User {
+public:
+    string username, password, name, email;
+
+    void registerUser() {
+        cout << "Enter username: ";
+        cin >> username;
+        cout << "Enter password: ";
+        cin >> password;
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter email: ";
+        cin >> email;
+    }
