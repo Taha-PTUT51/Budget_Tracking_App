@@ -150,3 +150,11 @@ void BudgetTrackingApp::incomeInput() {
 void BudgetTrackingApp::trackBudget() {
     budget.trackBudget();
 }
+
+void BudgetTrackingApp::expenseHistory() {
+    for (Expense expense : expenses) {
+        cout << "Description: " << expense.description << endl;
+        cout << "Amount: " << expense.amount << endl;
+    }
+}
+
