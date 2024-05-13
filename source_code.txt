@@ -33,3 +33,8 @@ public:
             cout << "Invalid username or password!" << endl;
         }
     }
+
+    void passwordRecovery() {
+        cout << "Enter new password: ";
+        cin >> password;
+    }
