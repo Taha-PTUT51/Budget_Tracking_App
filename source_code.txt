@@ -158,3 +158,10 @@ void BudgetTrackingApp::expenseHistory() {
     }
 }
 
+void BudgetTrackingApp::incomeHistory() {
+    for (Income income : incomes) {
+        cout << "Description: " << income.description << endl;
+        cout << "Amount: " << income.amount << endl;
+    }
+}
+
