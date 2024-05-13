@@ -210,3 +210,49 @@ void BudgetTrackingApp::searchExpenses() {
         cout << "No expense found with the given description." << endl;
     }
 }
+
+void BudgetTrackingApp::searchIncomes() {
+    string description;
+    cout << "Enter income description to search: ";
+    cin >> description;
+    bool found = false;
+    for (Income income : incomes) {
+        if (income.description == description) {
+            cout << "Description: " << income.description << endl;
+            cout << "Amount: " << income.amount << endl;
+            found = true;
+        }
+    }
+    if (!found) {
+        cout << "No income found with the given description." << endl;
+    }
+}
+
+void BudgetTrackingApp::viewProfile() {
+    user.viewProfile();
+}
+
+void BudgetTrackingApp::displayMenu() {
+    cout << "--------------------------" << endl;
+    cout << "       MENU OPTIONS       " << endl;
+    cout << "--------------------------" << endl;
+    cout << "| 1. Register User       |" << endl;
+    cout << "| 2. Login               |" << endl;
+    cout << "| 3. Budget Input        |" << endl;
+    cout << "| 4. Expense Input       |" << endl;
+    cout << "| 5. Income Input        |" << endl;
+    cout << "| 6. Track Budget        |" << endl;
+    cout << "| 7. Expense History     |" << endl;
+    cout << "| 8. Income History      |" << endl;
+    cout << "| 9. Budget Alerts       |" << endl;
+    cout << "| 10. Basic Analytics    |" << endl;
+    cout << "| 11. Password Recovery  |" << endl;
+    cout << "| 12. Edit Budget        |" << endl;
+    cout << "| 13. Search Expenses    |" << endl;
+    cout << "| 14. Search Incomes     |" << endl;
+    cout << "| 15. View Profile       |" << endl;
+    cout << "| 16. Exit               |" << endl;
+    cout << "--------------------------" << endl;
+    cout << "Enter your choice: ";
+}
+
