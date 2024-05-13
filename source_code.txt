@@ -45,3 +45,14 @@ public:
         cout << "Email: " << email << endl;
     }
 };
+
+class Budget {
+public:
+    double income, expense, balance;
+
+    void setBudget(double income, double expense) {
+        this->income = income;
+        this->expense = expense;
+        balance = income - expense;
+    }
+
