@@ -62,3 +62,9 @@ public:
         cout << "Balance: " << balance << endl;
     }
 
+    void editBudget(double newIncome, double newExpense) {
+        income = newIncome;
+        expense = newExpense;
+        balance = income - expense;
+    }
+};
